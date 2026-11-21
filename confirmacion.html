@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmación de Pago y Agenda | ConVoz — Espacio de Charla</title>
+    <meta
+      name="description"
+      content="Confirmación de pago de ConVoz y acceso al agendador de Google Calendar para coordinar tus llamadas."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="assets/logo-convoz.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-link" aria-label="Volver a ConVoz">
+          <img
+            src="assets/logo-convoz.png"
+            alt="ConVoz — Espacio de Charla"
+            class="brand-logo"
+            width="210"
+            height="89"
+          />
+        </a>
+
+        <div class="header-actions">
+          <a href="index.html" class="btn btn--secondary btn--sm">Volver al inicio</a>
+          <a
+            href="https://wa.me/59894460486"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--whatsapp btn--sm"
+            id="whatsappSupportBtn"
+          >
+            Asistencia por WhatsApp
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="confirm-page">
+      <div class="container">
+        <section class="confirm-card">
+          <div class="status-badge-lg status-badge-lg--success" id="confirmStatusBadge">
+            Verificando pago...
+          </div>
+
+          <h1 id="confirmTitle" style="font-size: clamp(1.85rem, 3vw, 2.5rem);">
+            Confirmando tu operación
+          </h1>
+          <p class="lead" id="confirmSubtitle" style="margin-bottom: 0;">
+            Aguardá un instante mientras registramos tu confirmación en nuestro sistema.
+          </p>
+
+          <div class="alert" id="sheetSyncAlert" role="status" hidden></div>
+
+          <!-- Resumen del registro -->
+          <div class="receipt-grid" aria-label="Resumen de tu contratación">
+            <div class="receipt-item">
+              <span>Código de registro</span>
+              <strong id="receiptCode">-</strong>
+            </div>
+            <div class="receipt-item">
+              <span>Titular</span>
+              <strong id="receiptClient">-</strong>
+            </div>
+            <div class="receipt-item">
+              <span>Servicio contratado</span>
+              <strong id="receiptService">-</strong>
+            </div>
+            <div class="receipt-item">
+              <span>Importe</span>
+              <strong id="receiptAmount">-</strong>
+            </div>
+          </div>
+
+          <!-- Agendador de Google Calendar -->
+          <div id="calendarSection" hidden>
+            <span class="eyebrow">Paso final</span>
+            <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem;">
+              Agendá tu servicio en Google Calendar
+            </h2>
+            <p style="color: var(--ink-secondary); margin-top: 0;">
+              Seleccioná el día y horario que prefieras para que nuestro profesional se comunique
+              con vos.
+            </p>
+
+            <div style="margin-bottom: 1rem;">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--primary"
+                id="calendarDirectBtn"
+                hidden
+              >
+                Abrir agendador en Google Calendar
+              </a>
+            </div>
+
+            <div class="calendar-embed-wrap">
+              <iframe
+                id="calendarIframe"
+                title="Agendador de citas de Google Calendar — ConVoz"
+                loading="lazy"
+                hidden
+              ></iframe>
+
+              <div class="calendar-placeholder" id="calendarPlaceholder" hidden>
+                <h3 style="margin-bottom: 0.35rem;">Agendador de Google Calendar listo para vincular</h3>
+                <p>
+                  Solo falta cargar tu enlace de <strong>Agenda de citas de Google Calendar</strong>
+                  en <code>js/config.js</code> (propiedad <code>googleCalendar.schedulingUrl</code>).
+                  Una vez cargado, aparecerá aquí embebido y también con acceso directo.
+                </p>
+                <a
+                  href="https://wa.me/59894460486"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn--whatsapp"
+                >
+                  Coordinar horario ahora por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/confirmacion.js"></script>
+  </body>
+</html>
