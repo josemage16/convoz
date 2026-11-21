@@ -27,11 +27,10 @@ window.CONVOZ_CONFIG = {
     spreadsheetUrl:
       "https://docs.google.com/spreadsheets/d/1PJCmhnUB4ROTOtIDs2LUj3wHYXqai7V5lhJXY0J2yYU/edit?usp=sharing",
     /**
-     * TODO: Pegá aquí la URL de implementación (Web App URL) obtenida al publicar
-     * google-apps-script/Code.gs desde tu Google Sheet.
-     * Ejemplo: "https://script.google.com/macros/s/AKfycb.../exec"
+     * URL de implementación (Web App URL) publicada desde google-apps-script/Code.gs
      */
-    appsScriptWebAppUrl: "",
+    appsScriptWebAppUrl:
+      "https://script.google.com/macros/s/AKfycbxoTBi_wthm-_0DU5lMrwDGIffFfXD6_Sm4AWXDK7RubET9rFFSCUsnLy9_PvJKQ628/exec",
   },
 
   dlocalGo: {
