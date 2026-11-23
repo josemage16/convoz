@@ -343,6 +343,7 @@
       "apellido",
       "fechaNacimiento",
       "dni",
+      "email",
       "areaCode",
       "phoneNumber",
       "provincia",
@@ -361,6 +362,7 @@
     const fechaNacimiento = document.getElementById("fechaNacimiento").value;
     const dniRaw = document.getElementById("dni").value.trim();
     const dniDigits = dniRaw.replace(/[^\d]/g, "");
+    const email = document.getElementById("email").value.trim();
     const countryCode = getResolvedCountryCode();
     const areaCode = areaCodeInput.value.replace(/[^\d]/g, "");
     const phoneNumber = phoneNumberInput.value.replace(/[^\d]/g, "");
@@ -391,6 +393,11 @@
 
     if (dniDigits.length < 6 || dniDigits.length > 10) {
       setFieldError("dni", "Ingresá un DNI válido (entre 6 y 10 dígitos).");
+      valid = false;
+    }
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      setFieldError("email", "Ingresá un correo electrónico válido (ej: nombre@dominio.com).");
       valid = false;
     }
 
@@ -534,6 +541,7 @@
       apellido: document.getElementById("apellido").value.trim(),
       fechaNacimiento: document.getElementById("fechaNacimiento").value,
       dni: document.getElementById("dni").value.trim().replace(/[^\d]/g, ""),
+      email: document.getElementById("email").value.trim().toLowerCase(),
       countryCode: countryCode,
       areaCode: areaCode,
       phoneNumber: phoneNumber,

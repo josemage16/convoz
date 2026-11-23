@@ -599,8 +599,8 @@
               <div class="step-number">02</div>
               <h3>Completás los datos</h3>
               <p>
-                Cargás los datos del titular (nombre, DNI, teléfono y localidad) de forma rápida
-                y segura.
+                Cargás los datos del titular (nombre, DNI, email, teléfono y localidad) de forma
+                rápida y segura.
               </p>
             </div>
             <div class="step-card">
@@ -867,6 +867,21 @@
                   required
                 />
                 <span class="field-error" id="dniError"></span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-field form-field--full">
+                <label for="email">Correo electrónico (Email) <span class="req">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Ej: marta.fernandez@gmail.com"
+                  autocomplete="email"
+                  required
+                />
+                <span class="field-error" id="emailError"></span>
               </div>
 
               <!-- Teléfono celular con prefijo de país y código de zona -->
